@@ -7,7 +7,7 @@ export interface Item {
 }
 
 class Todo {
-   @observable
+   @observable // Just a decoration to know this is observable state ,can remove it
    TodoItem: Array<Item>;
    loading: boolean;
    constructor(items: Array<Item>) {
@@ -16,7 +16,7 @@ class Todo {
       this.loading = false;
    }
 
-   @action
+   @action // Just a decoration to know this is an action to change state can remove it
    addTodo(item: Item): void {
       this.TodoItem.push(item);
    }
