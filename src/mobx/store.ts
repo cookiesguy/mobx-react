@@ -1,4 +1,4 @@
-import { action, observable, makeAutoObservable } from 'mobx';
+import { action, observable, makeAutoObservable, computed } from 'mobx';
 
 export interface Item {
    id: number;
@@ -45,6 +45,11 @@ class Todo {
             this.loading = false;
             this.TodoItem = array;
          });
+   }
+   @computed
+   getSortTodo(): Array<Item> {
+      const sorted = this.TodoItem.slice().sort((a, b) => a.id - b.id);
+      return sorted;
    }
 }
 

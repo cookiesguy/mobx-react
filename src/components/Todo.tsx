@@ -40,7 +40,7 @@ function Todo() {
             Add
          </button>
          {todo.loading && <p>Loading...</p>}
-         {todo.TodoItem.map((item: Item) => (
+         {todo.getSortTodo().map((item: Item) => (
             <div className="todo-item" key={item.id}>
                <p>Id: {item.id} </p>
                <p>Title: {item.title}</p>
